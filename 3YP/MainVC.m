@@ -8,6 +8,7 @@
 
 #import "MainVC.h"
 #import <UPPlatformSDK/UPPlatformSDK.h>
+#import "GlobalVar.h"
 
 @interface MainVC ()
 @property int userNoOfSteps; //use global variable instead
@@ -23,8 +24,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self jawboneRequest];
+}
 
-
+-(void)viewDidAppear:(BOOL)animated
+{
+    GlobalVar *globals = [GlobalVar sharedInstance];
+    NSLog([NSString stringWithFormat:@"Mood score: %@",globals.moodScore]) ;
+    NSLog([NSString stringWithFormat:@"Calories score: %@",globals.caloriesScore]) ;
+    NSLog([NSString stringWithFormat:@"Steps score: %@",globals.stepsScore]) ;
+    NSLog([NSString stringWithFormat:@"Sleep score: %@",globals.sleepScore]) ;
+    NSLog([NSString stringWithFormat:@"Nutrition score: %@",globals.nutritionScore]) ;
+    NSLog([NSString stringWithFormat:@"Weight score: %@",globals.weightScore]) ;
 }
 
 - (void) jawboneRequest
@@ -50,12 +60,12 @@
 
                                                                                              //get number of steps
                                                                                              NSDictionary *dic1 = [[response.data objectForKey:@"items"] firstObject];
-                                                                                             self.userNoOfSteps = [[[dic1 objectForKey:@"details"] objectForKey:@"steps"] intValue];
+                                                                                             GlobalVar *globals = [GlobalVar sharedInstance];
+                                                                                             globals.stepsScore = [[dic1 objectForKey:@"details"] objectForKey:@"steps"];
 
                                                                                              // currently only display the number of steps
-                                                                                             self.activityScore.titleLabel.text = [NSString stringWithFormat:@"%d",self.userNoOfSteps];
-                                                                                             self.stepsLabel.text = [NSString stringWithFormat:@"%d",self.userNoOfSteps];
-                                                                                             NSLog(@"steps : %d", self.userNoOfSteps);
+
+                                                                                             NSLog(@"Connected to Jawbone");
                                                                                          }];
                                                        }];
                                                    }

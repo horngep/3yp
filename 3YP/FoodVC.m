@@ -7,6 +7,7 @@
 //
 
 #import "FoodVC.h"
+#import "GlobalVar.h"
 
 @interface FoodVC ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -24,7 +25,8 @@
 
 - (IBAction)submitButtonClicked:(id)sender {
 
-//TODO: send the number back to Main VC (or global variables? appdelegate?)
+    GlobalVar *globals = [GlobalVar sharedInstance];
+    globals.moodScore = [NSNumber numberWithInt:[self.textField.text intValue]];
 
 }
 

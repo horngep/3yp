@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		840E603D1A41CA050057F872 /* StartQuestion2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E603C1A41CA050057F872 /* StartQuestion2VC.m */; };
 		8413F8D11A12283C003C2EAB /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8413F8D01A12283C003C2EAB /* MainVC.m */; };
+		84B810BE1A6961F200DF533F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B810BD1A6961F200DF533F /* Foundation.framework */; };
+		84B810C01A6961FA00DF533F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B810BF1A6961FA00DF533F /* CoreFoundation.framework */; };
+		84B810C31A69623000DF533F /* GlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B810C21A69623000DF533F /* GlobalVar.m */; };
 		84D78B521A1A8DA200D91741 /* UPPlatformSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D78B511A1A8DA200D91741 /* UPPlatformSDK.framework */; };
 		84E339281A12273200585731 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E339271A12273200585731 /* main.m */; };
 		84E3392B1A12273200585731 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E3392A1A12273200585731 /* AppDelegate.m */; };
@@ -37,6 +40,10 @@
 		840E603C1A41CA050057F872 /* StartQuestion2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartQuestion2VC.m; sourceTree = "<group>"; };
 		8413F8CF1A12283C003C2EAB /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		8413F8D01A12283C003C2EAB /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
+		84B810BD1A6961F200DF533F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		84B810BF1A6961FA00DF533F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		84B810C11A69623000DF533F /* GlobalVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVar.h; sourceTree = "<group>"; };
+		84B810C21A69623000DF533F /* GlobalVar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalVar.m; sourceTree = "<group>"; };
 		84D78B511A1A8DA200D91741 /* UPPlatformSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UPPlatformSDK.framework; sourceTree = "<group>"; };
 		84E339221A12273200585731 /* 3YP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3YP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E339261A12273200585731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B810C01A6961FA00DF533F /* CoreFoundation.framework in Frameworks */,
+				84B810BE1A6961F200DF533F /* Foundation.framework in Frameworks */,
 				84D78B521A1A8DA200D91741 /* UPPlatformSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,12 +89,21 @@
 		840E603E1A41CA150057F872 /* StartVC */ = {
 			isa = PBXGroup;
 			children = (
+				84E3392F1A12273200585731 /* StartQuestionVC.h */,
 				84E339301A12273200585731 /* StartQuestionVC.m */,
 				840E603B1A41CA050057F872 /* StartQuestion2VC.h */,
 				840E603C1A41CA050057F872 /* StartQuestion2VC.m */,
-				84E3392F1A12273200585731 /* StartQuestionVC.h */,
 			);
 			name = StartVC;
+			sourceTree = "<group>";
+		};
+		84B810BC1A6961A800DF533F /* Global Variables */ = {
+			isa = PBXGroup;
+			children = (
+				84B810C11A69623000DF533F /* GlobalVar.h */,
+				84B810C21A69623000DF533F /* GlobalVar.m */,
+			);
+			name = "Global Variables";
 			sourceTree = "<group>";
 		};
 		84E339191A12273200585731 = {
@@ -94,6 +112,8 @@
 				84E339241A12273200585731 /* 3YP */,
 				84E339411A12273200585731 /* 3YPTests */,
 				84E339231A12273200585731 /* Products */,
+				84B810BF1A6961FA00DF533F /* CoreFoundation.framework */,
+				84B810BD1A6961F200DF533F /* Foundation.framework */,
 				84D78B511A1A8DA200D91741 /* UPPlatformSDK.framework */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +136,7 @@
 				8413F8CF1A12283C003C2EAB /* MainVC.h */,
 				8413F8D01A12283C003C2EAB /* MainVC.m */,
 				84F290DA1A67E3BF0057943D /* Main.storyboard */,
+				84B810BC1A6961A800DF533F /* Global Variables */,
 				84F290E41A67E4E20057943D /* Food */,
 				84E339351A12273200585731 /* Images.xcassets */,
 				84E339371A12273200585731 /* LaunchScreen.xib */,
@@ -265,6 +286,7 @@
 				840E603D1A41CA050057F872 /* StartQuestion2VC.m in Sources */,
 				84E3392B1A12273200585731 /* AppDelegate.m in Sources */,
 				84E339281A12273200585731 /* main.m in Sources */,
+				84B810C31A69623000DF533F /* GlobalVar.m in Sources */,
 				8413F8D11A12283C003C2EAB /* MainVC.m in Sources */,
 				84E339311A12273200585731 /* StartQuestionVC.m in Sources */,
 				84F290E21A67E4BB0057943D /* FoodWebVC.m in Sources */,
