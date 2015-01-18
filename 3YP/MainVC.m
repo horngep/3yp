@@ -11,7 +11,6 @@
 #import "GlobalVar.h"
 
 @interface MainVC ()
-@property int userNoOfSteps; //use global variable instead
 
 
 @property (weak, nonatomic) IBOutlet UILabel *stepsLabel;
@@ -39,6 +38,7 @@
 
 - (void) jawboneRequest
 {
+    // get activity
     [[UPPlatform sharedPlatform] startSessionWithClientID:@"rTQr16Hk6qI"
                                              clientSecret:@"218556ce19914176412294e201438b009ba118a8"
                                                 authScope:(UPPlatformAuthScopeExtendedRead | UPPlatformAuthScopeMoveRead)
@@ -62,10 +62,38 @@
                                                                                              NSDictionary *dic1 = [[response.data objectForKey:@"items"] firstObject];
                                                                                              GlobalVar *globals = [GlobalVar sharedInstance];
                                                                                              globals.stepsScore = [[dic1 objectForKey:@"details"] objectForKey:@"steps"];
+                                                                                             NSLog(@"Successfully obtained data");
+                                                            }];
+                                                       }];
+                                                   }
+                                               }];
 
-                                                                                             // currently only display the number of steps
 
-                                                                                             NSLog(@"Connected to Jawbone");
+    // get sleep
+    [[UPPlatform sharedPlatform] startSessionWithClientID:@"rTQr16Hk6qI"
+                                             clientSecret:@"218556ce19914176412294e201438b009ba118a8"
+                                                authScope:(UPPlatformAuthScopeExtendedRead | UPPlatformAuthScopeMoveRead)
+                                               completion:^(UPSession *session, NSError *error) {
+                                                   if (session != nil) {
+                                                       // Your code to start making API requests goes here.
+
+                                                       // get user
+                                                       [UPUserAPI getCurrentUserWithCompletion:^(UPUser *user, UPURLResponse *response, NSError *error) {
+                                                           // Your code to process returned UPUser object.
+                                                           NSLog(@"logged in as %@", user.firstName);
+
+                                                           // perform a url request to the endpoint: moves
+                                                           UPURLRequest *request1 = [UPURLRequest getRequestWithEndpoint:@"https://jawbone.com/nudge/api/v.1.1/users/@me/sleeps"
+                                                                                                                  params:nil];
+                                                           [[UPPlatform sharedPlatform] sendRequest:request1
+                                                                                         completion:^(UPURLRequest *request, UPURLResponse *response, NSError *error) {
+                                                                                             // The resulting response.data is an NSDictionary with the JSON results.
+
+                                                                                             // TODO: response.data is not returning anything
+                                                                                             if(!error){
+                                                                                                 NSLog(@"SLEEP HERE %@",response.data);
+                                                                                             }
+
                                                                                          }];
                                                        }];
                                                    }

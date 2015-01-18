@@ -231,6 +231,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="266" y="584" width="99" height="64"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="kaH-jD-grp" kind="show" id="8r6-yR-x53"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0d-v8-6HD">
                                 <rect key="frame" x="110" y="458" width="99" height="64"/>
@@ -427,6 +430,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wiI-Af-ddR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2610" y="1060.5"/>
+        </scene>
+        <!--Weight InputVC-->
+        <scene sceneID="bbc-qn-bPB">
+            <objects>
+                <viewController id="kaH-jD-grp" customClass="WeightInputVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p9n-f0-SxR"/>
+                        <viewControllerLayoutGuide type="bottom" id="S6S-OV-mxm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5WT-q1-OEp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input your weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1O-zl-GU9">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="67" y="146" width="134" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6N-Ns-oPb">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="67" y="191" width="165" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gr-IX-7WU">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="67" y="259" width="49" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="kaH-jD-grp" eventType="touchUpInside" id="UWn-fH-qfr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="l1O-zl-GU9"/>
+                                <exclude reference="w6N-Ns-oPb"/>
+                                <exclude reference="6Gr-IX-7WU"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="l1O-zl-GU9"/>
+                                <include reference="w6N-Ns-oPb"/>
+                                <include reference="6Gr-IX-7WU"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="submitButton" destination="6Gr-IX-7WU" id="CWB-QS-h2x"/>
+                        <outlet property="textField" destination="w6N-Ns-oPb" id="jfK-bV-Nva"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xRu-yP-TIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3379.5" y="1060.5"/>
         </scene>
         <!--FoodVC-->
         <scene sceneID="9es-m3-Uxa">

@@ -12,6 +12,7 @@
 		84B810BE1A6961F200DF533F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B810BD1A6961F200DF533F /* Foundation.framework */; };
 		84B810C01A6961FA00DF533F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B810BF1A6961FA00DF533F /* CoreFoundation.framework */; };
 		84B810C31A69623000DF533F /* GlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B810C21A69623000DF533F /* GlobalVar.m */; };
+		84B810C61A69700000DF533F /* WeightInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B810C51A69700000DF533F /* WeightInputVC.m */; };
 		84D78B521A1A8DA200D91741 /* UPPlatformSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D78B511A1A8DA200D91741 /* UPPlatformSDK.framework */; };
 		84E339281A12273200585731 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E339271A12273200585731 /* main.m */; };
 		84E3392B1A12273200585731 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E3392A1A12273200585731 /* AppDelegate.m */; };
@@ -44,6 +45,8 @@
 		84B810BF1A6961FA00DF533F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		84B810C11A69623000DF533F /* GlobalVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVar.h; sourceTree = "<group>"; };
 		84B810C21A69623000DF533F /* GlobalVar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalVar.m; sourceTree = "<group>"; };
+		84B810C41A69700000DF533F /* WeightInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightInputVC.h; sourceTree = "<group>"; };
+		84B810C51A69700000DF533F /* WeightInputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightInputVC.m; sourceTree = "<group>"; };
 		84D78B511A1A8DA200D91741 /* UPPlatformSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UPPlatformSDK.framework; sourceTree = "<group>"; };
 		84E339221A12273200585731 /* 3YP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3YP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E339261A12273200585731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +109,24 @@
 			name = "Global Variables";
 			sourceTree = "<group>";
 		};
+		84B810C71A69702200DF533F /* WeightInput */ = {
+			isa = PBXGroup;
+			children = (
+				84B810C41A69700000DF533F /* WeightInputVC.h */,
+				84B810C51A69700000DF533F /* WeightInputVC.m */,
+			);
+			name = WeightInput;
+			sourceTree = "<group>";
+		};
+		84B810C81A69702E00DF533F /* Input VC */ = {
+			isa = PBXGroup;
+			children = (
+				84B810C71A69702200DF533F /* WeightInput */,
+				84F290E41A67E4E20057943D /* Food */,
+			);
+			name = "Input VC";
+			sourceTree = "<group>";
+		};
 		84E339191A12273200585731 = {
 			isa = PBXGroup;
 			children = (
@@ -136,10 +157,10 @@
 				8413F8CF1A12283C003C2EAB /* MainVC.h */,
 				8413F8D01A12283C003C2EAB /* MainVC.m */,
 				84F290DA1A67E3BF0057943D /* Main.storyboard */,
+				84B810C81A69702E00DF533F /* Input VC */,
 				84B810BC1A6961A800DF533F /* Global Variables */,
-				84F290E41A67E4E20057943D /* Food */,
-				84E339351A12273200585731 /* Images.xcassets */,
 				84E339371A12273200585731 /* LaunchScreen.xib */,
+				84E339351A12273200585731 /* Images.xcassets */,
 				84E3392C1A12273200585731 /* _YP.xcdatamodeld */,
 				84E339251A12273200585731 /* Supporting Files */,
 			);
@@ -290,6 +311,7 @@
 				8413F8D11A12283C003C2EAB /* MainVC.m in Sources */,
 				84E339311A12273200585731 /* StartQuestionVC.m in Sources */,
 				84F290E21A67E4BB0057943D /* FoodWebVC.m in Sources */,
+				84B810C61A69700000DF533F /* WeightInputVC.m in Sources */,
 				84F290DF1A67E42F0057943D /* FoodVC.m in Sources */,
 				84E3392E1A12273200585731 /* _YP.xcdatamodeld in Sources */,
 			);
