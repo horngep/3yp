@@ -214,7 +214,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="509" width="99" height="64"/>
+                                    <rect key="frame" x="36" y="509" width="99" height="64"/>
                                 </variation>
                                 <connections>
                                     <segue destination="DzD-83-AIg" kind="show" id="no7-hS-Kf8"/>
@@ -229,7 +229,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="257" y="509" width="99" height="64"/>
+                                    <rect key="frame" x="267" y="509" width="99" height="64"/>
                                 </variation>
                                 <connections>
                                     <segue destination="kaH-jD-grp" kind="show" id="8r6-yR-x53"/>
@@ -244,7 +244,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="134" y="509" width="99" height="64"/>
+                                    <rect key="frame" x="151" y="509" width="99" height="64"/>
                                 </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rn-Td-hTT">
@@ -382,7 +382,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="581" width="334" height="64"/>
+                                    <rect key="frame" x="33" y="598" width="334" height="64"/>
                                 </variation>
                             </button>
                         </subviews>
@@ -509,12 +509,77 @@
                     <view key="view" contentMode="scaleToFill" id="D4O-Rm-Ymc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Ra7-Kt-7sn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="405" height="44"/>
+                                </variation>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zv9-5m-Et9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellID" id="nG5-a6-qn6">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nG5-a6-qn6" id="Ded-aw-xQx">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="490-ok-kZ6" kind="show" id="PKR-Jr-oWL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="108" width="400" height="648"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="DzD-83-AIg" id="aeb-ht-HEy"/>
+                                    <outlet property="delegate" destination="DzD-83-AIg" id="8sF-xO-uu7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Ra7-Kt-7sn"/>
+                                <exclude reference="Zv9-5m-Et9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Ra7-Kt-7sn"/>
+                                <include reference="Zv9-5m-Et9"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Ra7-Kt-7sn" id="xDw-uF-O4B"/>
+                        <outlet property="tableView" destination="Zv9-5m-Et9" id="WEn-bS-WJc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNj-G3-7PC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2475" y="1751.25"/>
+        </scene>
+        <!--FoodDetailVC-->
+        <scene sceneID="JwG-YJ-8xD">
+            <objects>
+                <viewController storyboardIdentifier="FoodDetailVC" title="FoodDetailVC" id="490-ok-kZ6" customClass="FoodDetailVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LTJ-dL-sgF"/>
+                        <viewControllerLayoutGuide type="bottom" id="gfd-V3-Syb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="56m-u6-4Jw">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zGL-jI-37M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3237" y="1751.25"/>
         </scene>
         <!--FoodVC-->
         <scene sceneID="9es-m3-Uxa">
@@ -598,7 +663,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eud-0J-VOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3255" y="1725"/>
+            <point key="canvasLocation" x="4503" y="2412"/>
         </scene>
         <!--Food WebVC-->
         <scene sceneID="WJT-gW-C3v">
@@ -638,7 +703,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Gg-gI-3Dg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3985.5" y="1725"/>
+            <point key="canvasLocation" x="5209.5" y="2412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fOm-DB-naf">
