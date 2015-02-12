@@ -11,6 +11,7 @@
 		8413F8D11A12283C003C2EAB /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8413F8D01A12283C003C2EAB /* MainVC.m */; };
 		842A62AD1A7589CD00AC70C6 /* UsdaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A62AC1A7589CD00AC70C6 /* UsdaVC.m */; };
 		843A8B491A8D070E001E48B8 /* FoodDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A8B481A8D070E001E48B8 /* FoodDetailVC.m */; };
+		843A8B4C1A8D1288001E48B8 /* MoodInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A8B4B1A8D1288001E48B8 /* MoodInputVC.m */; };
 		84B810BE1A6961F200DF533F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B810BD1A6961F200DF533F /* Foundation.framework */; };
 		84B810C01A6961FA00DF533F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B810BF1A6961FA00DF533F /* CoreFoundation.framework */; };
 		84B810C31A69623000DF533F /* GlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B810C21A69623000DF533F /* GlobalVar.m */; };
@@ -47,6 +48,8 @@
 		842A62AC1A7589CD00AC70C6 /* UsdaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsdaVC.m; sourceTree = "<group>"; };
 		843A8B471A8D070E001E48B8 /* FoodDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodDetailVC.h; sourceTree = "<group>"; };
 		843A8B481A8D070E001E48B8 /* FoodDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDetailVC.m; sourceTree = "<group>"; };
+		843A8B4A1A8D1288001E48B8 /* MoodInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodInputVC.h; sourceTree = "<group>"; };
+		843A8B4B1A8D1288001E48B8 /* MoodInputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodInputVC.m; sourceTree = "<group>"; };
 		84B810BD1A6961F200DF533F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		84B810BF1A6961FA00DF533F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		84B810C11A69623000DF533F /* GlobalVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVar.h; sourceTree = "<group>"; };
@@ -106,6 +109,15 @@
 			name = StartVC;
 			sourceTree = "<group>";
 		};
+		843A8B4D1A8D1290001E48B8 /* MoodInput */ = {
+			isa = PBXGroup;
+			children = (
+				843A8B4A1A8D1288001E48B8 /* MoodInputVC.h */,
+				843A8B4B1A8D1288001E48B8 /* MoodInputVC.m */,
+			);
+			name = MoodInput;
+			sourceTree = "<group>";
+		};
 		84B810BC1A6961A800DF533F /* Global Variables */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +141,7 @@
 			children = (
 				84B810C71A69702200DF533F /* WeightInput */,
 				84F290E41A67E4E20057943D /* Food */,
+				843A8B4D1A8D1290001E48B8 /* MoodInput */,
 			);
 			name = "Input VC";
 			sourceTree = "<group>";
@@ -317,6 +330,7 @@
 				840E603D1A41CA050057F872 /* StartQuestion2VC.m in Sources */,
 				843A8B491A8D070E001E48B8 /* FoodDetailVC.m in Sources */,
 				84E3392B1A12273200585731 /* AppDelegate.m in Sources */,
+				843A8B4C1A8D1288001E48B8 /* MoodInputVC.m in Sources */,
 				84E339281A12273200585731 /* main.m in Sources */,
 				842A62AD1A7589CD00AC70C6 /* UsdaVC.m in Sources */,
 				84B810C31A69623000DF533F /* GlobalVar.m in Sources */,

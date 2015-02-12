@@ -44,7 +44,9 @@
                                                   NSLog(@"nutrients array : %@",nutrients);
 
                                                   // TODO: retrieve useful information
-                                                  
+                                                  // TODO: display useful information
+                                                  // TODO: numerify the information
+
                                               }
                                           }];
     [downloadTask resume];
