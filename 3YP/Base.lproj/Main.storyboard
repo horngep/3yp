@@ -536,7 +536,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wiI-Af-ddR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="1060.5"/>
+            <point key="canvasLocation" x="2664" y="1054.5"/>
         </scene>
         <!--Mood InputVC-->
         <scene sceneID="mKv-Rt-2qj">
@@ -761,9 +761,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nG5-a6-qn6" id="Ded-aw-xQx">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="490-ok-kZ6" kind="show" id="PKR-Jr-oWL"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
@@ -792,6 +789,7 @@
                     <connections>
                         <outlet property="searchBar" destination="Ra7-Kt-7sn" id="xDw-uF-O4B"/>
                         <outlet property="tableView" destination="Zv9-5m-Et9" id="WEn-bS-WJc"/>
+                        <segue destination="490-ok-kZ6" kind="show" id="ww8-36-oaW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNj-G3-7PC" userLabel="First Responder" sceneMemberID="firstResponder"/>

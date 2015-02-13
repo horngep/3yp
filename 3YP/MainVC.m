@@ -73,6 +73,8 @@
                                                                                              NSDictionary *dic1 = [[response.data objectForKey:@"items"] firstObject];
                                                                                              GlobalVar *globals = [GlobalVar sharedInstance];
                                                                                              //globals.stepsScore = [[dic1 objectForKey:@"details"] objectForKey:@"steps"];
+
+
                                                                                              //TODO: fake data
                                                                                              globals.stepsScore = [NSNumber numberWithInt:79];
                                                                                              globals.sleepScore = [NSNumber numberWithInt:67];

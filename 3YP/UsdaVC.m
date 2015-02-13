@@ -31,6 +31,7 @@
 
 - (void)searchFood:(NSString *)foodString{
     // SEARCH using food name to obtain ndbno
+
     NSString *searchRequest = [NSString stringWithFormat:@"http://api.data.gov/usda/ndb/search/?format=json&q=%@&sort=n&max=25&offset=0&api_key=GqZ0PsBrk1KGw8zyhQ1x6TLQPZMsGhjekVfjj6vu",foodString];
 
     NSURL *url = [NSURL URLWithString:searchRequest];
