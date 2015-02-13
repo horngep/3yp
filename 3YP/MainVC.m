@@ -13,8 +13,12 @@
 @interface MainVC ()
 
 
-@property (weak, nonatomic) IBOutlet UILabel *stepsLabel;
-@property (weak, nonatomic) IBOutlet UIButton *activityScore;
+@property (weak, nonatomic) IBOutlet UIButton *stepsScore;
+@property (weak, nonatomic) IBOutlet UIButton *sleepScore;
+@property (weak, nonatomic) IBOutlet UIButton *caloriesScore;
+@property (weak, nonatomic) IBOutlet UIButton *nutritionScore;
+@property (weak, nonatomic) IBOutlet UIButton *moodScore;
+@property (weak, nonatomic) IBOutlet UIButton *weightScore;
 
 @end
 
@@ -22,18 +26,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     [self jawboneRequest];
+    [self updateScoreDisplay];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    [self updateScoreDisplay];
+}
+
+-(void)updateScoreDisplay
+{
     GlobalVar *globals = [GlobalVar sharedInstance];
-    NSLog([NSString stringWithFormat:@"Mood score: %@",globals.moodScore]) ;
-    NSLog([NSString stringWithFormat:@"Calories score: %@",globals.caloriesScore]) ;
-    NSLog([NSString stringWithFormat:@"Steps score: %@",globals.stepsScore]) ;
-    NSLog([NSString stringWithFormat:@"Sleep score: %@",globals.sleepScore]) ;
-    NSLog([NSString stringWithFormat:@"Nutrition score: %@",globals.nutritionScore]) ;
-    NSLog([NSString stringWithFormat:@"Weight score: %@",globals.weightScore]) ;
+    [self.stepsScore setTitle:[NSString stringWithFormat:@"%@",globals.stepsScore] forState:UIControlStateNormal];
+    [self.sleepScore setTitle:[NSString stringWithFormat:@"%@",globals.sleepScore] forState:UIControlStateNormal];
+    [self.caloriesScore setTitle:[NSString stringWithFormat:@"%@",globals.caloriesScore] forState:UIControlStateNormal];
+    [self.nutritionScore setTitle:[NSString stringWithFormat:@"%@",globals.nutritionScore] forState:UIControlStateNormal];
+    [self.moodScore setTitle:[NSString stringWithFormat:@"%@",globals.moodScore] forState:UIControlStateNormal];
+    [self.weightScore setTitle:[NSString stringWithFormat:@"%@",globals.weightScore] forState:UIControlStateNormal];
 }
 
 - (void) jawboneRequest
@@ -61,8 +72,13 @@
                                                                                              //get number of steps
                                                                                              NSDictionary *dic1 = [[response.data objectForKey:@"items"] firstObject];
                                                                                              GlobalVar *globals = [GlobalVar sharedInstance];
-                                                                                             globals.stepsScore = [[dic1 objectForKey:@"details"] objectForKey:@"steps"];
+                                                                                             //globals.stepsScore = [[dic1 objectForKey:@"details"] objectForKey:@"steps"];
+                                                                                             //TODO: fake data
+                                                                                             globals.stepsScore = [NSNumber numberWithInt:79];
+                                                                                             globals.sleepScore = [NSNumber numberWithInt:67];
                                                                                              NSLog(@"Successfully obtained data");
+
+                                                                                             [self updateScoreDisplay];
                                                             }];
                                                        }];
                                                    }
@@ -95,7 +111,9 @@
                                                                                              }
 
                                                                                          }];
+
                                                        }];
+
                                                    }
                                                }];
 }

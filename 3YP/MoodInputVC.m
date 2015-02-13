@@ -7,12 +7,15 @@
 //
 
 #import "MoodInputVC.h"
+#import "GlobalVar.h"
 
 @interface MoodInputVC ()
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property NSArray *questionArray;
+@property int gad7Score;
+@property int nextButtonClickedTimes;
 
 
 @end
@@ -30,13 +33,36 @@
                           @"5. Being so restless that it is hard to sit still ",
                           @"6. Becoming easily annoyed or irritable ",
                           @"7. Feeling afraid as if something awful might happen ", nil];
+
+    [self updateQuestion:0];
+    self.gad7Score = 0;
+    self.nextButtonClickedTimes = 0;
+    [self.nextButton setTitle:@"Next" forState:UIControlStateNormal];
+
 }
 
 - (IBAction)nextButtonClicked:(id)sender {
+
+    self.gad7Score += (int)self.segmentedControl.selectedSegmentIndex;
     //TODO: adding score (max 21)
-    //TODO: everytime pressing next, change question
+
+    if (self.nextButtonClickedTimes <6){
+        self.nextButtonClickedTimes += 1;
+        [self updateQuestion:self.nextButtonClickedTimes];
+    } else {
+        [self.nextButton setTitle:@"Done" forState:UIControlStateNormal];
+        NSLog(@"Total score = %d", self.gad7Score);
+
+        GlobalVar *globals = [GlobalVar sharedInstance];
+        globals.moodScore = [NSNumber numberWithInt:self.gad7Score];
+    }
 }
 
+-(void)updateQuestion:(NSUInteger)questionNo{
+
+    self.questionLabel.text = [self.questionArray objectAtIndex:questionNo];
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

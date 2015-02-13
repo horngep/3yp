@@ -349,7 +349,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ta-5W-8Sv">
                                 <rect key="frame" x="329" y="213" width="87" height="46"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="0">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -426,8 +426,12 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="activityScore" destination="6Ta-5W-8Sv" id="Yka-Jd-1dj"/>
-                        <outlet property="stepsLabel" destination="zoW-6v-tAo" id="o7V-2K-RBr"/>
+                        <outlet property="caloriesScore" destination="7rn-Td-hTT" id="3nG-lv-9Pk"/>
+                        <outlet property="moodScore" destination="P3u-qM-0Us" id="kYF-Vq-ZKO"/>
+                        <outlet property="nutritionScore" destination="h97-On-3tv" id="QT0-AW-26U"/>
+                        <outlet property="sleepScore" destination="Iwl-gg-Dva" id="Z9G-SJ-3sp"/>
+                        <outlet property="stepsScore" destination="6Ta-5W-8Sv" id="xZP-Of-vUA"/>
+                        <outlet property="weightScore" destination="TK1-qO-yTo" id="OXi-X5-i5k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wiI-Af-ddR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -443,6 +447,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6hw-iA-aAs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aTh-0c-wa4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hm9-ZX-1Ym">
@@ -702,6 +707,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gfd-V3-Syb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="56m-u6-4Jw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
