@@ -17,6 +17,8 @@
 @property int gad7Score;
 @property int nextButtonClickedTimes;
 
+//NOTE THAT THIS VC IS EXACTLY THE SAME AS StartQuestion2VC
+
 
 @end
 
