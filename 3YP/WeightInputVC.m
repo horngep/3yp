@@ -24,9 +24,20 @@
 
 - (IBAction)submitButtonPressed:(id)sender {
 
-    GlobalVar *globals = [GlobalVar sharedInstance];
-    globals.weightScore = [NSNumber numberWithInt:[self.textField.text intValue]];
+    float weight = [self.textField.text floatValue];
+    float height = 1.7f;           // hard coded
 
+    float BMI = weight / (height * height);
+    float k = BMI - 21.75f;
+    if (k < 0){
+        k = -k;
+    }
+
+    float weightScore = 100 * (1 - k/40);
+
+    GlobalVar *globals = [GlobalVar sharedInstance];
+    globals.weightScore = [NSNumber numberWithInt:weightScore];
+    NSLog(@"BMI: %f, k = %f, score: %f",BMI, k, weightScore);
 }
 
 - (void)didReceiveMemoryWarning {

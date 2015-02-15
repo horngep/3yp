@@ -34,7 +34,8 @@
                           @"4. Trouble relaxing",
                           @"5. Being so restless that it is hard to sit still ",
                           @"6. Becoming easily annoyed or irritable ",
-                          @"7. Feeling afraid as if something awful might happen ", nil];
+                          @"7. Feeling afraid as if something awful might happen ",
+                          @"Finished.",nil];
 
     [self updateQuestion:0];
     self.gad7Score = 0;
@@ -45,19 +46,20 @@
 
 - (IBAction)nextButtonClicked:(id)sender {
 
-    self.gad7Score += (int)self.segmentedControl.selectedSegmentIndex;
-    //TODO: adding score (max 21)
 
-    if (self.nextButtonClickedTimes <6){
+    if (self.nextButtonClickedTimes <7){
+        self.gad7Score += (int)self.segmentedControl.selectedSegmentIndex;
         self.nextButtonClickedTimes += 1;
         [self updateQuestion:self.nextButtonClickedTimes];
     } else {
         [self.nextButton setTitle:@"Done" forState:UIControlStateNormal];
         NSLog(@"Total score = %d", self.gad7Score);
-
+        double k = (double)self.gad7Score / 21;
+        int moodScore = 100 * (1 - k);
         GlobalVar *globals = [GlobalVar sharedInstance];
-        globals.moodScore = [NSNumber numberWithInt:self.gad7Score];
+        globals.moodScore = [NSNumber numberWithInt:moodScore];
     }
+
 }
 
 -(void)updateQuestion:(NSUInteger)questionNo{
