@@ -7,6 +7,7 @@
 //
 
 #import "FoodDetailVC.h"
+#import "GlobalVar.h"
 
 @interface FoodDetailVC ()
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
@@ -32,7 +33,6 @@
     // Burgerkind chicken NDBno = 21256
     [self getFoodReport:self.ndbno];
 }
-
 
 - (void)getFoodReport:(NSString *)ndbno{
     // SEARCH using food name to obtain ndbno
@@ -69,7 +69,6 @@
     [downloadTask resume];
 }
 
-
 -(void)reloadDisplay
 {
     // displaying
@@ -77,11 +76,22 @@
     self.labelProtien.text = [NSString stringWithFormat:@"%f", self.protien];
     self.labelCarb.text = [NSString stringWithFormat:@"%f", self.carb];
     self.labelFat.text = [NSString stringWithFormat:@"%f", self.fat];
-
 }
 
+- (IBAction)saveButtonPressed:(id)sender
+{
+    GlobalVar *globals = [GlobalVar sharedInstance];
 
 
+    // getting the current Calories score
+    // do some maths
+    // update the calories score
+
+
+    // do the same with Nutrition score
+
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -906,6 +906,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="183" y="634" width="34" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="490-ok-kZ6" eventType="touchUpInside" id="qSu-EG-wNy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
