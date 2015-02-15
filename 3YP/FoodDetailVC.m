@@ -9,6 +9,16 @@
 #import "FoodDetailVC.h"
 
 @interface FoodDetailVC ()
+@property (weak, nonatomic) IBOutlet UILabel *labelName;
+@property (weak, nonatomic) IBOutlet UILabel *labelCal;
+@property (weak, nonatomic) IBOutlet UILabel *labelProtien;
+@property (weak, nonatomic) IBOutlet UILabel *labelCarb;
+@property (weak, nonatomic) IBOutlet UILabel *labelFat;
+
+@property double kCal;
+@property double protien;
+@property double carb;
+@property double fat;
 
 @end
 
@@ -17,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
     NSLog(@"NDBno = %@",self.ndbno);
     // Burgerkind chicken NDBno = 21256
     [self getFoodReport:self.ndbno];
@@ -40,17 +51,37 @@
                                               } else {
                                                   NSDictionary *report = jsonDic[@"report"];
                                                   NSDictionary *food = report[@"food"];
+                                                  self.labelName.text = [NSString stringWithFormat:@"%@",food[@"name"]];
+
                                                   NSArray *nutrients = food[@"nutrients"];
-                                                  NSLog(@"nutrients array : %@",nutrients);
 
-                                                  // TODO: retrieve useful information
-                                                  // TODO: display useful information
-                                                  // TODO: numerify the information
+                                                  // Here, we could introduce a Food Object
+                                                  self.kCal = [[nutrients objectAtIndex:1][@"value"] doubleValue];
 
+                                                  // all in grams
+                                                  self.protien = [[nutrients objectAtIndex:3][@"value"] doubleValue];
+                                                  self.carb = [[nutrients objectAtIndex:4][@"value"] doubleValue];
+                                                  self.fat = [[nutrients objectAtIndex:3][@"value"] doubleValue];
+
+                                                  [self reloadDisplay];
                                               }
                                           }];
     [downloadTask resume];
 }
+
+
+-(void)reloadDisplay
+{
+    // displaying
+    self.labelCal.text = [NSString stringWithFormat:@"%f", self.kCal];
+    self.labelProtien.text = [NSString stringWithFormat:@"%f", self.protien];
+    self.labelCarb.text = [NSString stringWithFormat:@"%f", self.carb];
+    self.labelFat.text = [NSString stringWithFormat:@"%f", self.fat];
+
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

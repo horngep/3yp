@@ -32,7 +32,8 @@
                           @"4. Trouble relaxing",
                           @"5. Being so restless that it is hard to sit still ",
                           @"6. Becoming easily annoyed or irritable ",
-                          @"7. Feeling afraid as if something awful might happen ", nil];
+                          @"7. Feeling afraid as if something awful might happen ",
+                          @"Finished.",nil];
 
     [self updateQuestion:0];
     self.gad7Score = 0;
