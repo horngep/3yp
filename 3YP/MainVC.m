@@ -63,7 +63,7 @@
 -(void)checkMood
 {
     GlobalVar *globals = [GlobalVar sharedInstance];
-    if([globals.moodScore intValue]<50){
+    if([globals.moodScore intValue]<50 && [globals.moodScore intValue] > 0){
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Low Mood Score" message:@"Please consider give Psychiatrists a visit" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"OK", nil];
         [alert show];
     }
