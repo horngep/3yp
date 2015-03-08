@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *moodScore;
 @property (weak, nonatomic) IBOutlet UIButton *weightScore;
 
+@property (weak, nonatomic) IBOutlet UILabel *totalScoreLabel;
+
 @end
 
 @implementation MainVC
@@ -27,13 +29,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self jawboneRequest];
+    //[self jawboneRequest];
     [self updateScoreDisplay];
+
+    GlobalVar *globals = [GlobalVar sharedInstance];
+    // dummy data
+    globals.stepsScore = [NSNumber numberWithInt:79];
+    globals.sleepScore = [NSNumber numberWithInt:67];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [self updateScoreDisplay];
+    [self checkMood];
 }
 
 -(void)updateScoreDisplay
@@ -45,6 +53,20 @@
     [self.nutritionScore setTitle:[NSString stringWithFormat:@"%@",globals.nutritionScore] forState:UIControlStateNormal];
     [self.moodScore setTitle:[NSString stringWithFormat:@"%@",globals.moodScore] forState:UIControlStateNormal];
     [self.weightScore setTitle:[NSString stringWithFormat:@"%@",globals.weightScore] forState:UIControlStateNormal];
+
+    int sumScore = [globals.sleepScore intValue] + [globals.stepsScore intValue] + [globals.caloriesScore intValue] + [globals.nutritionScore intValue] + [globals.moodScore intValue] + [globals.weightScore intValue];
+    int totalScore = sumScore/6;
+
+    self.totalScoreLabel.text = [NSString stringWithFormat:@"%d",totalScore];
+}
+
+-(void)checkMood
+{
+    GlobalVar *globals = [GlobalVar sharedInstance];
+    if([globals.moodScore intValue]<50){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Low Mood Score" message:@"Please consider give Psychiatrists a visit" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"OK", nil];
+        [alert show];
+    }
 }
 
 - (void) jawboneRequest

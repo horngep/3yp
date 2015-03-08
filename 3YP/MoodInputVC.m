@@ -19,7 +19,6 @@
 
 //NOTE THAT THIS VC IS EXACTLY THE SAME AS StartQuestion2VC
 
-
 @end
 
 @implementation MoodInputVC

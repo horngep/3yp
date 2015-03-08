@@ -82,14 +82,17 @@
 {
     GlobalVar *globals = [GlobalVar sharedInstance];
 
+    //TODO: fake data
+    int nutScore = 76;
+    int calScore = 84;
+    globals.nutritionScore = [NSNumber numberWithInt:nutScore];
+    globals.caloriesScore = [NSNumber numberWithInt:calScore];
+
 
     // getting the current Calories score
     // do some maths
     // update the calories score
-
-
     // do the same with Nutrition score
-
 
 }
 

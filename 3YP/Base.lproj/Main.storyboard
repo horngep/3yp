@@ -296,15 +296,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxT-r9-gan">
-                                <rect key="frame" x="258" y="88" width="85" height="96"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="58"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="158" y="78" width="85" height="96"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQF-ad-i8A">
                                 <rect key="frame" x="251" y="458" width="99" height="64"/>
                                 <color key="backgroundColor" red="0.82615194520000002" green="0.82615194520000002" blue="0.82615194520000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -476,18 +467,15 @@
                                     <rect key="frame" x="248" y="182" width="45" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuK-fo-UdF">
-                                <rect key="frame" x="251" y="458" width="99" height="64"/>
-                                <color key="backgroundColor" red="0.82615194520000002" green="0.82615194520000002" blue="0.82615194520000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="self reported questionaire">
-                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxT-r9-gan">
+                                <rect key="frame" x="258" y="88" width="85" height="96"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="33" y="598" width="334" height="64"/>
+                                    <rect key="frame" x="118" y="78" width="164" height="96"/>
                                 </variation>
-                            </button>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -504,7 +492,6 @@
                                 <exclude reference="6Ta-5W-8Sv"/>
                                 <exclude reference="ngN-22-rVC"/>
                                 <exclude reference="zoW-6v-tAo"/>
-                                <exclude reference="XuK-fo-UdF"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -521,7 +508,6 @@
                                 <include reference="6Ta-5W-8Sv"/>
                                 <include reference="ngN-22-rVC"/>
                                 <include reference="zoW-6v-tAo"/>
-                                <include reference="XuK-fo-UdF"/>
                             </mask>
                         </variation>
                     </view>
@@ -531,6 +517,7 @@
                         <outlet property="nutritionScore" destination="h97-On-3tv" id="QT0-AW-26U"/>
                         <outlet property="sleepScore" destination="Iwl-gg-Dva" id="Z9G-SJ-3sp"/>
                         <outlet property="stepsScore" destination="6Ta-5W-8Sv" id="xZP-Of-vUA"/>
+                        <outlet property="totalScoreLabel" destination="TxT-r9-gan" id="W5R-6B-FMZ"/>
                         <outlet property="weightScore" destination="TK1-qO-yTo" id="OXi-X5-i5k"/>
                     </connections>
                 </viewController>

@@ -21,7 +21,6 @@
 @implementation StartQuestion2VC
 
 // NOTE THAT THIS VC IS EXACTLY THE SAME AS MoodInputVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

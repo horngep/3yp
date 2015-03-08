@@ -13,14 +13,11 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *searchedFoodArray;
-
-
 @end
 
 @implementation UsdaVC
 
 // API Key : GqZ0PsBrk1KGw8zyhQ1x6TLQPZMsGhjekVfjj6vu
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,7 +31,7 @@
 
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 
-    NSString *searchRequest = [NSString stringWithFormat:@"http://api.data.gov/usda/ndb/search/?format=json&q=%@&sort=n&max=15&offset=0&api_key=GqZ0PsBrk1KGw8zyhQ1x6TLQPZMsGhjekVfjj6vu",foodString];
+    NSString *searchRequest = [NSString stringWithFormat:@"http://api.data.gov/usda/ndb/search/?format=json&q=%@&sort=n&max=5&offset=0&api_key=GqZ0PsBrk1KGw8zyhQ1x6TLQPZMsGhjekVfjj6vu",foodString];
 
     NSURL *url = [NSURL URLWithString:searchRequest];
     NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
@@ -54,7 +51,6 @@
                                                   [self.tableView reloadData];
                                                   // now we have array of items
                                               }
-
                                           }];
     [downloadTask resume];
 }
