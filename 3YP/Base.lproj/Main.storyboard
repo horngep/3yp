@@ -406,6 +406,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="229" y="396" width="87" height="46"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="VLj-io-bFr" kind="show" id="cLn-y9-0xA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpX-0M-Nhn">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -652,6 +655,41 @@
             </objects>
             <point key="canvasLocation" x="3423" y="1060.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="v6v-Md-7iw">
+            <objects>
+                <viewController id="VLj-io-bFr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZHh-t2-HWU"/>
+                        <viewControllerLayoutGuide type="bottom" id="rDW-5B-S5B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YfZ-6F-6xw">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graph screen shot" translatesAutoresizingMaskIntoConstraints="NO" id="49U-d0-tqA">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="119" width="400" height="337"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="49U-d0-tqA"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="49U-d0-tqA"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TWS-UM-lgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4275" y="1491.75"/>
+        </scene>
         <!--Weight InputVC-->
         <scene sceneID="bbc-qn-bPB">
             <objects>
@@ -781,7 +819,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNj-G3-7PC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3379.5" y="1743.75"/>
+            <point key="canvasLocation" x="2653.5" y="1752.75"/>
         </scene>
         <!--FoodDetailVC-->
         <scene sceneID="JwG-YJ-8xD">
@@ -940,7 +978,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zGL-jI-37M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4068" y="1743.75"/>
+            <point key="canvasLocation" x="3423" y="2007.75"/>
         </scene>
         <!--FoodVC-->
         <scene sceneID="9es-m3-Uxa">
@@ -1085,4 +1123,7 @@
             <point key="canvasLocation" x="358" y="1061"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="graph screen shot" width="553" height="417"/>
+    </resources>
 </document>
